@@ -1,12 +1,21 @@
-import React from "react";
-import { Button, Label, Input , Badge } from "reactstrap";
+import { React , useState } from 'react';
+import { Button, Label, Input  } from "reactstrap";
 import "./opportunity.css";
 import { PiBagSimpleThin } from "react-icons/pi";
 import { LiaSave } from "react-icons/lia";
 import { BiSearchAlt } from "react-icons/bi";
+import Select from 'react-select';
 
 function OpportunityDetails() {
-    const ele = <Badge>New</Badge>;
+    const [Client, setClient] = useState([ { value: 'Client1', label: 'Client1', color: '#00875A' },
+    { value: 'Client2', label: 'Client2', color: '#253858' },
+  ]);
+  const [Tags, setTags] = useState([ { value: 'Tag1', label: 'Tag1', color: '#00875A' },
+  { value: 'Tag2', label: 'Tag2', color: '#253858' },
+]);
+const [Contacts, setContacts] = useState([ { value: 'Contact1', label: 'Contacts1', color: '#00875A' },
+{ value: 'Contact1', label: 'Contacts1', color: '#253858' },
+]);
   return (
     <div className="m-5 ">
       <div
@@ -98,15 +107,19 @@ function OpportunityDetails() {
               <Label for="Client" className="statmentText fw-bold">
                 Client
               </Label>
-              <Input id="Client" name="select" type="name"  value={ele}>
-              
-              </Input>
+              <Select
+                isMulti
+                name="colors"
+                options={Client}
+                className="basic-multi-select"
+                classNamePrefix="select"
+              />
             </div>
           </div>
           <div className="row mt-1">
             <div className="col">
               <Label for="Client Budget" className="statmentText fw-bold">
-              Client Budget
+                Client Budget
               </Label>
               <Input id="Client Budget" name="Client Budget" />
             </div>
@@ -114,23 +127,38 @@ function OpportunityDetails() {
               <Label for="Contacts" className="statmentText fw-bold">
                 Contacts
               </Label>
-              <Input id="Contacts" name="Contacts" type="name"  value={ele}>
-              
-              </Input>
+              <Select
+                isMulti
+                name="colors"
+                options={Contacts}
+                className="basic-multi-select"
+                classNamePrefix="select"
+              />
             </div>
           </div>
           <div className="row mt-1">
             <div className="col">
-              <Label for="Proposal Submission Date" className="statmentText fw-bold">
-              Proposal Submission Date
+              <Label
+                for="Proposal Submission Date"
+                className="statmentText fw-bold"
+              >
+                Proposal Submission Date
               </Label>
-              <Input id="Proposal Submission Date" name="Proposal Submission Date" type="date"/>
+              <Input
+                id="Proposal Submission Date"
+                name="Proposal Submission Date"
+                type="date"
+              />
             </div>
             <div className="col">
               <Label for="Incoming/Outgoing" className="statmentText fw-bold">
                 Incoming/Outgoing
               </Label>
-              <Input id="Incoming/Outgoing" name="Incoming/Outgoing" type="select">
+              <Input
+                id="Incoming/Outgoing"
+                name="Incoming/Outgoing"
+                type="select"
+              >
                 <option className="text-start">Incoming</option>
                 <option className="text-start">Outgoing</option>
               </Input>
@@ -139,25 +167,23 @@ function OpportunityDetails() {
           <div className="row mt-1">
             <div className="col">
               <Label for="Due Date" className="statmentText fw-bold">
-              Due Date
+                Due Date
               </Label>
-              <Input id="Due Date" name="Due" type="date" placeholder="N/A"/>
+              <Input id="Due Date" name="Due" type="date" placeholder="N/A" />
             </div>
             <div className="col">
               <Label for="Tags" className="statmentText fw-bold">
                 Tags
               </Label>
-              <Input id="Tags" name="Tags" type="select">
-               <option>
-               <p className="bg-light text-danger">lg,gl,</p>
-               </option>
-               <option>
-               <p className="bg-light text-danger">lg,</p>
-               </option>
-              </Input>
+              <Select
+                isMulti
+                name="colors"
+                options={Tags}
+                className="basic-multi-select"
+                classNamePrefix="select"
+              />
             </div>
           </div>
-          
         </div>
       </div>
     </div>
