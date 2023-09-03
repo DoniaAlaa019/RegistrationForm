@@ -1,0 +1,25 @@
+.buttonSave{
+    background-color: rgb(226, 104, 11);
+    border-color: rgb(226, 104, 11);
+}
+.statmentText{
+     color: grey;
+}
+#filp {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+.image{
+    border-radius: 50%;
+    
+}
+.text-color{
+    color: rgb(226, 104, 11);
+}
+.inputSatge{
+    text-align: center !important;
+}
